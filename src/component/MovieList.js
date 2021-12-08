@@ -1,11 +1,12 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+//import { propTypes } from "react-bootstrap/esm/Image";
 import Rating from "./Rating";
 
 const MovieList = (props) => {
   return (
     <>
-      {props.movies.map((movie, index, rating) => (
+      {props.movies.map((movie, index, rating, year) => (
         <Card style={{ width: "20rem" }}>
           <Card.Img variant="top" src={movie.PosterURL} />
           <Card.Body>
@@ -13,9 +14,8 @@ const MovieList = (props) => {
             <Card.Text>
               <p>{movie.Year}</p>
             </Card.Text>
-            <div>
-              <Rating index="4" />
-            </div>
+            <div>{movie.rating}</div>
+            <Rating movieRating={movie.Rating} />
           </Card.Body>
 
           {/* <img src={movie.PosterURL} alt="movie"></img>

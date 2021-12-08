@@ -50,8 +50,8 @@ function RatingIcon(props) {
   );
 }
 
-const Rating = () => {
-  const [rating, setRating] = useState(0);
+const Rating = ({ movieRating = 0 }) => {
+  const [rating, setRating] = useState(movieRating);
   const [hoverRating, setHoverRating] = useState(0);
   const onMouseEnter = (index) => {
     setHoverRating(index);
